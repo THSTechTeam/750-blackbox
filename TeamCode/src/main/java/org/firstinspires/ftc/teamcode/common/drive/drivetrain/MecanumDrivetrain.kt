@@ -34,7 +34,6 @@ class MecanumDrivetrain(hardwareMap: HardwareMap) : Drivetrain(hardwareMap) {
             it.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
         }
 
-        // TODO: Set direction of motors using DcMotorSimple.Direction
         frontLeft.direction = DcMotorSimple.Direction.REVERSE
         backRight.direction = DcMotorSimple.Direction.REVERSE
         frontRight.direction = DcMotorSimple.Direction.REVERSE
