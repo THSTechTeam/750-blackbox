@@ -36,6 +36,7 @@ class TankDrivetrain(hardwareMap: HardwareMap) : Drivetrain(hardwareMap) {
 
         frontLeft.direction = DcMotorSimple.Direction.REVERSE
         backLeft.direction = DcMotorSimple.Direction.REVERSE
+        backRight.direction = DcMotorSimple.Direction.REVERSE
     }
 
     /**
@@ -49,8 +50,8 @@ class TankDrivetrain(hardwareMap: HardwareMap) : Drivetrain(hardwareMap) {
         setMotorPowers(listOf(
             drivePower.x,
             drivePower.y,
-            drivePower.x,
-            drivePower.y
+            drivePower.y,
+            drivePower.x
         ))
     }
 
