@@ -1,18 +1,15 @@
-// Copyright (c) Brandon Pacewic
-// SPDX-License-Identifier: MIT WITH FIRST-exception
-
 package org.firstinspires.ftc.teamcode.opmode.teleop
 
-import com.arcrobotics.ftclib.command.CommandOpMode
 import com.qualcomm.robotcore.eventloop.opmode.Disabled
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp
 
-import org.firstinspires.ftc.teamcode.common.drive.geometry.Pose
+import org.firstinspires.ftc.teamcode.common.control.OpModeEx
 import org.firstinspires.ftc.teamcode.common.drive.drivetrain.TankDrivetrain
+import org.firstinspires.ftc.teamcode.common.drive.geometry.Pose
 
 @Disabled
 @TeleOp(name = "Tank Drive")
-class TankDrive : CommandOpMode() {
+class TankDrive : OpModeEx() {
     lateinit var drive: TankDrivetrain
     var motorPowerFactor = 0.3
 
