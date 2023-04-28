@@ -51,13 +51,17 @@ class LiftPositionCommand : CommandBase {
 
         timer = ElapsedTime()
         liftSubsystem.targetPosition = position
+        liftSubsystem.isBusy = true
     }
 
     override fun isFinished(): Boolean {
-        return if (timer == null) {
-            false
+        if (timer == null) {
+            return false
+        } else if (abs(liftSubsystem.lift.currentPosition - position) <= allowedError || timer!!.seconds() >= timeOut) {
+            liftSubsystem.isBusy = false
+            return true
         } else {
-            abs(liftSubsystem.lift.currentPosition - position) <= allowedError || timer!!.seconds() >= timeOut
+            return false
         }
     }
 }

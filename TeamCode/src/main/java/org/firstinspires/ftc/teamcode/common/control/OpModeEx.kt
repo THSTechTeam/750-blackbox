@@ -3,6 +3,8 @@
 
 package org.firstinspires.ftc.teamcode.common.control
 
+import com.arcrobotics.ftclib.command.Command
+import com.arcrobotics.ftclib.command.CommandScheduler
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode
 
 /**
@@ -24,7 +26,7 @@ abstract class OpModeEx : LinearOpMode() {
     /**
      * Called in the first OpMode loop.
      */
-    open fun firstRun() {
+    open fun begin() {
         // Empty by default. Not required.
     }
 
@@ -51,12 +53,19 @@ abstract class OpModeEx : LinearOpMode() {
             return
         }
 
-        firstRun()
+        begin()
 
         while (opModeIsActive() && !isStopRequested) {
             run()
         }
 
         end()
+    }
+
+    /**
+     * Fast way to schedule ftclib commands to the CommandScheduler.
+     */
+    fun schedule(command: Command) {
+        CommandScheduler.getInstance().schedule(command)
     }
 }

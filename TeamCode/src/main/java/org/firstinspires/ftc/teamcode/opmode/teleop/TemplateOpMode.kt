@@ -20,7 +20,7 @@ class TemplateOpMode : OpModeEx() {
         CommandScheduler.getInstance().reset()
         
         robot = Robot(hardwareMap)
-        robot.startImuThread(this)
+        robot.startImuThread(this, hardwareMap)
     }
 
     override fun run() {

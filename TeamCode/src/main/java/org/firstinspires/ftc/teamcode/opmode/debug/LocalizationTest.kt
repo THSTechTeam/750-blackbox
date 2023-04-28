@@ -33,7 +33,7 @@ class LocalizationTest : LinearOpMode() {
 
         waitForStart()
 
-        robot.startImuThread(this)
+        robot.startImuThread(this, hardwareMap)
 
         var imuState = DigitalState.NOT_FUNCTIONING
         var leftEncoderState = DigitalState.NOT_FUNCTIONING

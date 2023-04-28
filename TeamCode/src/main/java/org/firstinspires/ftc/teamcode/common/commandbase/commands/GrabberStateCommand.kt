@@ -23,6 +23,7 @@ class GrabberStateCommand(
         }
 
         timer = ElapsedTime()
+        grabberSubsystem.state = state
         grabberSubsystem.grabber.setPower(state.power)
     }
 

@@ -22,7 +22,7 @@ class MecanumDrive : OpModeEx() {
                 -gamepad1.left_stick_x.toDouble(),
                 -gamepad1.left_stick_y.toDouble(),
                 -gamepad1.right_stick_x.toDouble()
-            ).times(0.8 - (0.6 * gamepad1.right_trigger.toDouble()))
+            ).times(0.8 - (0.6 * -gamepad1.right_trigger.toDouble()))
         )
     }
 }
