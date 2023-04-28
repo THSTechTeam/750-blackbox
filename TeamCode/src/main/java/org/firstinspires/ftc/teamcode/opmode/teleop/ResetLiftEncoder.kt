@@ -13,7 +13,7 @@ import org.firstinspires.ftc.teamcode.common.hardware.Robot
 @TeleOp(name = "Reset Lift Encoder")
 class ResetLiftEncoder : LinearOpMode() {
     override fun runOpMode() {
-        val robot = Robot(hardwareMap)
+        val robot = Robot(hardwareMap, Robot.OpMode.TESTING)
 
         telemetry.addLine("Ready to reset lift encoder.")
         telemetry.addLine("Start the opmode to reset the lift encoder.")
