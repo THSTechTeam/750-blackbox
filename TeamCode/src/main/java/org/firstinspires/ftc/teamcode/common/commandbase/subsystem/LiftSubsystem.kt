@@ -34,7 +34,7 @@ class LiftSubsystem(
         lift.motorType = motorConfigurationType
         lift.zeroPowerBehavior = DcMotor.ZeroPowerBehavior.BRAKE
 
-        if (abs(lift.currentPosition) > maxStartingDifference && !opMode == OpMode.TESTING) {
+        if (abs(lift.currentPosition) > maxStartingDifference && opMode != OpMode.TESTING) {
             throw RuntimeException("Lift encoder is not zeroed. Run the ResetLiftEncoder OpMode.")
         }
     }
